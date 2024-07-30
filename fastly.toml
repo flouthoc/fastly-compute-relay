@@ -1,0 +1,19 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = [""]
+cloned_from = "https://github.com/fastly/compute-starter-kit-rust-default"
+description = ""
+language = "rust"
+manifest_version = 3
+name = "relay-rust"
+service_id = ""
+
+[local_server]
+  [local_server.kv_stores]
+    [[local_server.kv_stores.relay_store]]
+      key = "first"
+      data = "This is some data"
+
+[scripts]
+  build = "cargo build --bin fastly-compute-project --release --target wasm32-wasi --color always"
