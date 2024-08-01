@@ -35,7 +35,7 @@ fn main(mut req: Request) -> Result<Response, Error> {
                 None => "[]",
                 Some(k) => &k.into_string(),
             };
-            let mut requests_buffer: Vec<StoredRequest> = serde_json::from_str(&key_value).unwrap();
+            let mut requests_buffer: Vec<StoredRequest> = serde_json::from_str(key_value).unwrap();
 
             if requests_buffer.is_empty() {
                 Ok(Response::from_status(StatusCode::OK).with_body_text_plain(""))
@@ -75,7 +75,7 @@ fn main(mut req: Request) -> Result<Response, Error> {
                 None => "[]",
                 Some(k) => &k.into_string(),
             };
-            let mut requests_buffer: Vec<StoredRequest> = serde_json::from_str(&key_value).unwrap();
+            let mut requests_buffer: Vec<StoredRequest> = serde_json::from_str(key_value).unwrap();
 
             //Add new request to request_buffer to KV.
             requests_buffer.push(request.clone());
