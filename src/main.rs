@@ -1,8 +1,7 @@
-use fastly::http::{body, header, Method, StatusCode};
+use fastly::http::{body, StatusCode};
 use fastly::kv_store::KVStore;
-use fastly::{mime, Error, Request, Response};
+use fastly::{Error, Request, Response};
 use serde::{Deserialize, Serialize};
-use serde_json::json;
 use std::collections::HashMap;
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
